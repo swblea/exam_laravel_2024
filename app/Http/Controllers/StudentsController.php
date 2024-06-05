@@ -26,9 +26,9 @@ class StudentController extends Controller
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'date_of_birth' => 'required|date',
             'address' => 'required', 
             'group_id' => 'required|exists:groups,id', 
+             'date_of_birth' => 'required|date',
         ]);
 
         Student::create($request->all());
